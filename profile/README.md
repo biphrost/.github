@@ -2,6 +2,7 @@
 
 Biphrost is a next-generation app hosting platform, built by humans, for the benefit of other humans.
 
+
 ## Introduction
 
 ### Feed your technolust
@@ -19,7 +20,8 @@ Biphrost's goal is to empower users to affordably and easily explore more of the
 In service of this goal:
 * Biphrost charges just enough to fund continued development and maintenance;
 * Nearly all of Biphrost is open source software, allowing other people to use its components to build similar platforms of their own;
-* There is a strong focus on end-user experience.
+* There is a strong focus on end-user experience;
+* The platform is designed to be managed by experienced systems administrators, but is also highly automated for long-term stability.
 
 ### Vibe
 
@@ -28,6 +30,7 @@ Biphrost is also a love letter to the style of the [Mirrorshades](https://en.wik
 It's not for everyone.
 
 It's not meant to be.
+
 
 ## Architecture
 
@@ -67,6 +70,7 @@ SVG solves the challenges presented by a CSS-only UI.
 
 So, the web-based UI is a thin wrapper around the API, and is responsible for rendering API responses in fun, stylish, and animated ways.
 
+
 ## Roadmap
 
 * Conclude a period of importing a number of deployments from another service (in progress, until about mid-March)
@@ -78,6 +82,14 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
 * Invite codes for selected first adopters
 * IRC server set up, chat with a sysop via web interface
 * Monitoring, observability, analytics integrated into API and web UI
+
+### TODOs and wishlist
+
+- [] The UI is designed to be themeable. Add themes for:
+   - [] Basic or bare text, or a TUI-like interface
+   - [] A more traditional, bland web-based interface
+   - [] A hand-drawn-like theme, using https://roughjs.com/
+
 
 ## Why...?
 
