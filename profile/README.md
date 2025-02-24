@@ -78,6 +78,9 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
     * Add [Nepenthes](https://zadzmo.org/code/nepenthes/) to the current configuration (March)
 * API first release (April/May)
 * UI build-out
+* Speed up deployments
+    * `biphrost deploy base lxc --apache --php --mysql` should finish in under a minute
+    * May need to implement local mirrors of some packages
 * Deployment commands for the first batch of applications
 * Invite codes for selected first adopters
 * IRC server set up, chat with a sysop via web interface
