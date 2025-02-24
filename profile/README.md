@@ -74,8 +74,13 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
 ## Roadmap
 
 * Conclude a period of importing a number of deployments from another service (in progress, until about mid-March)
-* Active defense: AI bot crawlers are becoming a severe nuisance
-    * Add [Nepenthes](https://zadzmo.org/code/nepenthes/) to the current configuration (March)
+* Active defense
+    * AI bot crawlers are becoming a severe nuisance
+        * Add [Nepenthes](https://zadzmo.org/code/nepenthes/) to the current configuration (March)
+    * Automatically detect, deny, and frustrate brute-force login attacks against common web applications
+    * Use log monitoring to automatically flag IPs and networks that are scanning for common vulnerabilities
+    * WordPress-specific:
+        * Build out enough security at the edge that Wordfence and similar plugins are unnecessary for hosted sites
 * API first release (April/May)
 * UI build-out
 * Speed up deployments
