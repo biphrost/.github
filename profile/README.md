@@ -80,12 +80,18 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
     * Automatically detect, deny, and frustrate brute-force login attacks against common web applications
     * Use log monitoring to automatically flag IPs and networks that are scanning for common vulnerabilities
     * WordPress-specific:
-        * Build out enough security at the edge that Wordfence and similar plugins are unnecessary for hosted sites
+        * Build out enough security at the edge that Wordfence, Akismet, and similar plugins are unnecessary for hosted sites
+* Tune nginx SSL configuration
+    * Should be able to shave a few ms off each request
 * API first release (April/May)
 * UI build-out
 * Speed up deployments
     * `biphrost deploy base lxc --apache --php --mysql` should finish in under a minute
     * May need to implement local mirrors of some packages
+* Centralize logging
+    * rsyslog from containers to host
+    * neutralize journald
+    * mysql slow query logging on by default
 * Deployment commands for the first batch of applications
 * Invite codes for selected first adopters
 * IRC server set up, chat with a sysop via web interface
