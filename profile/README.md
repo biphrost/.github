@@ -77,6 +77,8 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
 * Active defense
     * AI bot crawlers are becoming a severe nuisance
         * Add [Nepenthes](https://zadzmo.org/code/nepenthes/) to the current configuration (March)
+        * This really needs to be the very next modification done to the host configuration -- ASAP
+        * OpenAI's GPT crawler is absolutely hammering multiple sites on multiple hosts and is currently solely responsible for about half of the servers' load
     * Automatically detect, deny, and frustrate brute-force login attacks against common web applications
     * Use log monitoring to automatically flag IPs and networks that are scanning for common vulnerabilities
     * WordPress-specific:
