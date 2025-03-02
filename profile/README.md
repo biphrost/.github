@@ -88,16 +88,21 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
 * API first release (April/May)
 * UI build-out
 * Speed up deployments
-    * `biphrost deploy base lxc --apache --php --mysql` should finish in under a minute
+    * `biphrost deploy lxc --apache --php --mysql` should finish in under a minute
     * May need to implement local mirrors of some packages
 * Centralize logging
     * rsyslog from containers to host
     * neutralize journald
     * mysql slow query logging on by default
+* In-house uptime monitoring and notifications
+    * Move uptime monitoring into the Biphrost infrastructure
+        * Probably via a pair of nodes on different services, networks, and continents ("Huginn" and "Muninn") that use a simple-as-possible distributed log or CRDT to agree on the up/down status of a target
+    * Use https://ntfy.sh/ for notifications
 * Deployment commands for the first batch of applications
 * Invite codes for selected first adopters
 * IRC server set up, chat with a sysop via web interface
 * Monitoring, observability, analytics integrated into API and web UI
+* Dedicate a significant percentage of revenue back into the open source projects that Biphrost hosts and uses for hosting
 
 ### TODOs and wishlist
 
