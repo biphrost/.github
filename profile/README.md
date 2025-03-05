@@ -73,8 +73,8 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
 
 ## Roadmap
 
-* Conclude a period of importing a number of deployments from another service (in progress, until about mid-March)
-* Active defense
+- [ ] Conclude a period of importing a number of deployments from another service (in progress, until about mid-March)
+- [ ] Active defense
     * AI bot crawlers are becoming a severe nuisance
         * Add [Nepenthes](https://zadzmo.org/code/nepenthes/) to the current configuration (March)
         * This really needs to be the very next modification done to the host configuration -- ASAP
@@ -83,33 +83,42 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
     * Use log monitoring to automatically flag IPs and networks that are scanning for common vulnerabilities
     * WordPress-specific:
         * Build out enough security at the edge that Wordfence, Akismet, and similar plugins are unnecessary for hosted sites
-* Tune nginx SSL configuration
+- [ ] Tune nginx SSL configuration
     * Should be able to shave a few ms off each request
-* API first release (April/May)
-* UI build-out
-* Speed up deployments
+- [ ] API first release (April/May)
+- [ ] UI build-out
+- [ ] Speed up deployments
     * `biphrost deploy lxc --apache --php --mysql` should finish in under a minute
     * May need to implement local mirrors of some packages
-* Centralize logging
+- [ ] Centralize logging
     * rsyslog from containers to host
     * neutralize journald
     * mysql slow query logging on by default
-* In-house uptime monitoring and notifications
+- [ ] In-house uptime monitoring and notifications
     * Move uptime monitoring into the Biphrost infrastructure
         * Probably via a pair of nodes on different services, networks, and continents ("Huginn" and "Muninn") that use a simple-as-possible distributed log or CRDT to agree on the up/down status of a target
     * Use https://ntfy.sh/ for notifications
-* Deployment commands for the first batch of applications
-* Invite codes for selected first adopters
-* IRC server set up, chat with a sysop via web interface
-* Monitoring, observability, analytics integrated into API and web UI
-* Dedicate a significant percentage of revenue back into the open source projects that Biphrost hosts and uses for hosting
+- [ ] Deployment commands for the first batch of applications
+- [ ] Invite codes for selected first adopters
+- [ ] IRC server set up, chat with a sysop via web interface
+- [ ] Monitoring, observability, analytics integrated into API and web UI
+- [ ] Dedicate a significant percentage of revenue back into the open source projects that Biphrost hosts and uses for hosting
 
 ### TODOs and wishlist
 
-- [] The UI is designed to be themeable. Add themes for:
-   - [] Basic or bare text, or a TUI-like interface
-   - [] A more traditional, bland web-based interface
-   - [] A hand-drawn-like theme, using https://roughjs.com/
+- [ ] The UI is designed to be themeable. Add themes for:
+   - [ ] Basic or bare text, or a TUI-like interface
+   - [ ] A more traditional, bland web-based interface
+   - [ ] A hand-drawn-like theme, using https://roughjs.com/
+- [ ] Support for other distributions / architectures
+    * During a fun recent conversation about this project, I was asked about running this at home / locally (yes!) and on arm64
+    * Currently, the command script system isn't organized in a way that supports other OSs or architectures
+    * I *think* architecture support could be pretty easily added to `deploy lxc` with a `--arch` option
+    * But, other Linux distro support is tricky:
+        * Most of the biphrost shell files include some distro-specific stuff (`apt-get`, `dpkg`, locations of files/directories, and behavior of some system utils)
+        * So there would need to be different versions of these shell files for each supported distribution
+        * I'm not sure how to organize that with this system
+        * It could become a bit of a maintenance nightmare
 
 
 ## Why...?
