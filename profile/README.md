@@ -99,6 +99,10 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
         * Probably via a pair of nodes on different services, networks, and continents ("Huginn" and "Muninn") that use a simple-as-possible distributed log or CRDT to agree on the up/down status of a target
     * Use https://ntfy.sh/ for notifications
 - [ ] Deployment commands for the first batch of applications
+- [ ] Option to run applications on local hardware
+    * Offer an absurdly cheap Wireguard or ssh tunnel back to user-owned hardware
+    * The potential for abuse here needs to be considered carefully
+        * Maybe only available to a subset of users?
 - [ ] Invite codes for selected first adopters
 - [ ] IRC server set up, chat with a sysop via web interface
 - [ ] Monitoring, observability, analytics integrated into API and web UI
