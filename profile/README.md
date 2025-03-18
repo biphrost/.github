@@ -34,6 +34,8 @@ It's not meant to be.
 
 ## Architecture
 
+Biphrost has a carefully-stratified architecture: it manages LXC-based containers with a collection of [shell utilities](https://github.com/biphrost/shell), which are invoked by a RESTful API (via a distributed task queue), which is dressed up with a fun [SVG-based UI](https://github.com/biphrost/ui).
+
 ### LXC
 
 Biphrost uses [LXC](https://linuxcontainers.org/lxc/introduction/) instead of Docker for containerization (scroll down if your first question is "why?"). LXC is configured here to run *unprivileged* containers, to further reduce the risks associated with a compromised container.
@@ -58,13 +60,15 @@ The Biphrost shell requires root on the host, and assumes that the operator is a
 
 ### API
 
-An API is being developed, using Laravel. More to come.
+The API is a basic RESTful http API. Developers can invoke it via `curl`, and are encouraged to do so. API requests enter a task queue in rqlite, which gets replicated across all the nodes, and each node volunteers to accept and complete an API request using CRDT operations. *Most* API requests are intended to run synchronously, returning a result in a reasonable amount of time (~1 to 2 seconds). Other API requests will return a task ID which can be used to retrieve progress information and log output.
+
+More to come.
 
 ### UI
 
 A web-based UI is in progress.
 
-Meeting Biphrost's stylistic aspirations quickly collided with limitations in CSS. CSS has become an amazing system for building interactive web-based user interfaces, and many of its early problems have been satisfiably addressed. Still, the Biphrost UI is a step into something more advanced than the typical web application interface.
+Meeting Biphrost's stylistic aspirations quickly collided with limitations in CSS. CSS has evolved into an amazing system for building interactive web-based user interfaces, and many of its early problems have been satisfiably addressed. Still, the Biphrost UI is a step into something more advanced than the typical web application interface.
 
 SVG solves the challenges presented by a CSS-only UI.
 
