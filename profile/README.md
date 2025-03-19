@@ -36,6 +36,55 @@ It's not meant to be.
 
 Biphrost has a carefully-stratified architecture: it manages LXC-based containers with a collection of [shell utilities](https://github.com/biphrost/shell), which are invoked by a RESTful API (via a distributed task queue), which is dressed up with a fun [SVG-based UI](https://github.com/biphrost/ui).
 
+```
++------------------------------------------\
+|                                          |
+|                   UI                     |
+|                                          |
+|      https://github.com/biphrost/ui      |
+|------------------------------------------|
+|                                          |
+|             SVG, HTML, CSS               |
+|                                          |
+\------------------------------------------+
+                     ^
+                     |
+                      \
+                       \-----------------\
+                                          \
+                                           |
+                                           v
+                     +------------------------------------------\
+                     |                                          |
+                     |                    API                   |
+                     |                                          |
+                     |     https://github.com/biphrost/api      |
+                     |------------------------------------------|
+                     |                     |                    |
+                     |       Laravel       |       rqlite       |
+                     |                     |                    |
+                     \------------------------------------------+
+                                           ^
+                                           |
+                                            \
+                                             \----------------\
+                                                               \
+                                                                |
+                                                                v
+                                           +------------------------------------------\
+                                           |                                          |
+                                           |                  shell                   |
+                                           |                                          |
+                                           |     https://github.com/biphrost/shell    |
+                                           |------------------------------------------|
+                                           |           |                   |          |
+                                           |    LXC    |     markdown      |   bash   |
+                                           |           |                   |          |
+                                           \------------------------------------------+
+```
+<sup>https://cascii.app/5955a</sup>
+
+
 ### LXC
 
 Biphrost uses [LXC](https://linuxcontainers.org/lxc/introduction/) instead of Docker for containerization (scroll down if your first question is "why?"). LXC is configured here to run *unprivileged* containers, to further reduce the risks associated with a compromised container.
