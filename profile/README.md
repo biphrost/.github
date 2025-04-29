@@ -126,7 +126,7 @@ So, the web-based UI is a thin wrapper around the API, and is responsible for re
 
 ## Roadmap
 
-- [ ] Conclude a period of importing a number of deployments from another service (in progress, until about mid-March)
+- [x] ~Conclude a period of importing a number of deployments from another service (in progress, until about mid-March)~
 - [ ] Active defense
     * AI bot crawlers are becoming a severe nuisance
         * Add [Nepenthes](https://zadzmo.org/code/nepenthes/) to the current configuration (March)
